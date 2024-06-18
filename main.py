@@ -10,6 +10,9 @@ def choose_word():
     word = random.choice(themes[theme]).upper()
     return theme, word
 
+theme, word = choose_word()
+print(f"Theme: {theme}, Word: {word}")
+
 # Welcome the player to the quiz
 answer = input ("Hello, welcome to our Hangman game. Do you know how to play Hangman?").upper().lower()
 # Tell the player the themes on the game if they say yes
