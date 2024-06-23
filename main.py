@@ -1,4 +1,6 @@
+play = "yes"
 # Code for selecting the word from theme
+from distutils.dep_util import newer
 import random 
 themes = {
     "Superheros/Villians ": ["Spiderman", "Deadpool", "", "Riddler", "Thanos", "Batman"],
@@ -47,3 +49,6 @@ def main():
         print("Game over")
 
 
+#Replay
+    play = input("Do you want to play again?").lower()
+    
