@@ -1,0 +1,59 @@
+import random 
+
+# Dictionary of themes and words
+themes = {
+    "Superheroes/Villains": ["Spiderman", "Deadpool", "Riddler", "Thanos", "Batman"],
+    "Animals": ["Elephant", "Giraffe", "Lion", "Gorilla", "Tiger"],
+    "Dinosaurs": ["Velociraptor", "Triceratops", "Spinosaurus", "Tyrannosaurus"]
+}
+
+# Function to choose a random word from a random theme
+def choose_word():
+    theme = random.choice(list(themes.keys()))
+    word = random.choice(themes[theme]).upper()
+    return theme, word
+
+# Initialize the game variables
+theme, word = choose_word()
+Livesremaining = 11
+
+def main():
+    global Livesremaining
+
+    # Welcome the player to the quiz
+    answer = input("Hello, welcome to our Hangman game. Do you know how to play Hangman? ").strip().lower()
+
+    # Tell the player the themes if they say yes
+    if answer == "yes":
+        print("Great, our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs, and cartoons.")
+        input("Press enter to start")
+    # Tell the player how to play the game if they answer no
+    elif answer == "no":
+        print("The aim of this game is to guess a random word before the hangman has been drawn.")
+        print("Our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs, and cartoons.")
+        input("Press enter to start")
+    else:
+        print("That isn't a valid answer. Let's start the game anyway.")
+        input("Press enter to start")
+
+
+
+    # Conclusion
+    print("\nThank you for starting our Hangman game! We hope you have a great time playing.")
+
+    # replay
+    replay()
+
+def replay():
+    # Replay function
+    play_again = input("Do you want to play again? (yes/no) ").strip().lower()
+    if play_again == "yes":
+        main()
+    else:
+        print("Thank you for playing! Goodbye.")
+
+if __name__ == "__main__":
+    main()
+
+if __name__ == "__main__":
+    main()

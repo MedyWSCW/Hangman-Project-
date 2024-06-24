@@ -45,5 +45,11 @@ def main():
     if Livesremaining == 0:
 
         print("Game over")
+    
+    # Conclusion
+    print("\nThank you for starting our Hangman game! We hope you have a great time playing.")
+    print("Remember, the goal is to guess the word before the hangman is fully drawn. Good luck!")
 
+if __name__ == "__main__":
+    main()
 
