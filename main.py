@@ -105,7 +105,7 @@ def display_hangman(tries):
     # Welcome the player to the quiz
 
 
-# Main Code
+# MAIN CODE
 
 intro()
 
