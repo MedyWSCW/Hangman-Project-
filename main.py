@@ -11,6 +11,15 @@ def choose_word():
     word = random.choice(themes[theme]).upper()
     return theme, word
 
+#Functions to the current progress 
+def display_current_progress(word, guessed_letters):
+    display = [letter if letter in guessed_letters else "_" for letter in word]
+    return " ".join(display)
+
+#Functions to see the letters guessed 
+def word_guessed(word, guessed_letters):
+    return all(letter in guessed_letters for letter in word)
+
 def intro():
     answer = input ("Hello, welcome to our Hangman game. Do you know how to play Hangman? (yes/no)").upper().lower()
     if answer == "yes":
@@ -104,17 +113,47 @@ def show_hangman(tries):
                    -
                 """
     ]
+    return stages[tries]
 
     # Welcome the player to the quiz
 
 
 
-# MAIN CODE
+#Code to see the current progress and display
+def main():
+    theme, word = choose_word()
+    guessed_letters = set()
+    attempts_remaining = 6
+
+    print(f"The chosen theme is {theme}.")
+    print("The game will now start.")
+    
+    while attempts_remaining > 0:
+        print(f"\nWord: {display_current_progress(word, guessed_letters)}")
+        print(f"Attempts remaining: {attempts_remaining}")
+        print(show_hangman(6 - attempts_remaining))
+        guess = input("Guess a letter: ").upper()
+        
+        if guess in guessed_letters:
+            print(f"You have already guessed the letter'{guess}'.")
+        elif guess in word:
+            guessed_letters.add(guess)
+            print(f"Good answer '{guess}' is in the word.")
+        else:
+            guessed_letters.add(guess)
+            attempts_remaining -= 1
+            print(f"Unlucky, '{guess}' is not in the word.")
+        
+        if word_guessed(word, guessed_letters):
+            print(f"Congratulations! You've guessed the word '{word}' correctly.")
+            break
+    else:
+        print(f"Game over! The word was '{word}'. Better luck next time.")
 
 
-
+#MAIN CODE 
 intro()
-
+main()
 
 if Livesremaining == 0:
 
