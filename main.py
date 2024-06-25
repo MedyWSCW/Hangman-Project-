@@ -25,14 +25,13 @@ def intro():
     if answer == "yes":
         print("Great, our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs and cartoons.")
         input("press enter to start")
-    else:
-        print("That isn't an answer")
     if answer == "no":
         print("The aim of this game is to guess a random word before the hangman has been drawn.")
         print("Our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs and cartoons.")
         input("Press enter to start")
-    print ("The chosen theme is {}".format (theme))
-    print("The game will now start.")
+    else:
+        print("That isn't an answer")
+
 
 
 
@@ -45,17 +44,52 @@ def main():
    
 # Hangman figure display
 
-
 def show_hangman(tries):
 
     stages = [
                 """
                    --------
                    |      |
-                   |      O
-                   |     \\|/
+                   |      
+                   |    
+                   |      
+                   |     
+                   -
+                """,
+                """
+                   --------
                    |      |
-                   |     / \\
+                   |      O
+                   |    
+                   |      
+                   |     
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |      |
+                   |      |
+                   |     
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |      |
+                   |      |
+                   |     
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|
+                   |      |
+                   |     
                    -
                 """,
                 """
@@ -73,46 +107,12 @@ def show_hangman(tries):
                    |      O
                    |     \\|/
                    |      |
-                   |      
+                   |     / \\
                    -
                 """,
-                """
-                   --------
-                   |      |
-                   |      O
-                   |     \\|
-                   |      |
-                   |     
-                   -
-                """,
-                """
-                   --------
-                   |      |
-                   |      O
-                   |      |
-                   |      |
-                   |     
-                   -
-                """,
-                """
-                   --------
-                   |      |
-                   |      O
-                   |    
-                   |      
-                   |     
-                   -
-                """,
-                """
-                   --------
-                   |      |
-                   |      
-                   |    
-                   |      
-                   |     
-                   -
-                """
+              
     ]
+    
     return stages[tries]
 
     # Welcome the player to the quiz
