@@ -109,10 +109,10 @@ def show_hangman(tries):
                    -
                 """
     ]
-<<<<<<< HEAD
+
     # Welcome the player to the quiz
 
-=======
+
 
 # MAIN CODE
 
@@ -164,11 +164,6 @@ print ("The chosen theme is {}".format (theme))
 
 
 print("The game will now start.")
-
-
-
-
->>>>>>> 953e7a86073a6f46cb74be270759cea0f44cb0ea
 
 # Main Code
 
