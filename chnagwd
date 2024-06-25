@@ -7,6 +7,7 @@ themes = {
     "Dinosaurs": ["Velociraptor", "Triceratops", "Spinosaurus", "Tyrannosaurus"]
 }
 
+
 # Function to choose a random word from a random theme
 def choose_word():
     theme = random.choice(list(themes.keys()))
@@ -18,6 +19,72 @@ theme, word = choose_word()
 lives_remaining = 11
 guessed_letters = []
 
+def display_hangman(tries):
+    stages = [
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / \\
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / 
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |      
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|
+                   |      |
+                   |     
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |      |
+                   |      |
+                   |     
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |    
+                   |      
+                   |     
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      
+                   |    
+                   |      
+                   |     
+                   -
+                """
+    ]
 def main():
     global lives_remaining
     global guessed_letters
