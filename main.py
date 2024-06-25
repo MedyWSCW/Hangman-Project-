@@ -20,6 +20,7 @@ def display_current_progress(word, guessed_letters):
 def word_guessed(word, guessed_letters):
     return all(letter in guessed_letters for letter in word)
 
+# Welcome the player to the qui
 def intro():
     answer = input ("Hello, welcome to our Hangman game. Do you know how to play Hangman? (yes/no)").upper().lower()
     if answer == "yes":
@@ -31,9 +32,9 @@ def intro():
         print("The aim of this game is to guess a random word before the hangman has been drawn.")
         print("Our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs and cartoons.")
         input("Press enter to start")
+
     print ("The chosen theme is {}".format (theme))
     print("The game will now start.")
-
 
 
 theme, word = choose_word()
@@ -115,7 +116,7 @@ def show_hangman(tries):
     ]
     return stages[tries]
 
-    # Welcome the player to the quiz
+    
 
 
 
@@ -147,8 +148,8 @@ def main():
         if word_guessed(word, guessed_letters):
             print(f"Congratulations! You've guessed the word '{word}' correctly.")
             break
-    else:
-        print(f"Game over! The word was '{word}'. Better luck next time.")
+    
+    print(f"Game over! The word was '{word}'. Better luck next time.")
 
 
 #MAIN CODE 
@@ -161,7 +162,7 @@ if Livesremaining == 0:
     
     # Conclusion
 print("\nThank you for starting our Hangman game! We hope you have a great time playing.")
-print("Remember, the goal is to guess the word before the hangman is fully drawn. Good luck!")
+print("Remember, the goal is to guess the word before the hangman is fully drawn. Good luck!")  
 
 
 #Replay
