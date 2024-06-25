@@ -1,4 +1,6 @@
+play = "yes"
 # Code for selecting the word from theme
+from distutils.dep_util import newer
 import random 
 themes = {
     "Superheros/Villians ": ["Spiderman", "Deadpool", "", "Riddler", "Thanos", "Batman"],
@@ -34,9 +36,12 @@ Livesremaining = 11
 
 def main():
     global Livesremaining
+   
 # Hangman figure display
 
-def display_hangman(tries):
+
+def show_hangman(tries):
+
     stages = [
                 """
                    --------
@@ -102,10 +107,14 @@ def display_hangman(tries):
                    -
                 """
     ]
+
     # Welcome the player to the quiz
 
 
+
 # MAIN CODE
+
+
 
 intro()
 
@@ -120,6 +129,5 @@ print("\nThank you for starting our Hangman game! We hope you have a great time 
 print("Remember, the goal is to guess the word before the hangman is fully drawn. Good luck!")
 
 
-if __name__ == "__main__":
-    main()
-
+#Replay
+play = input("Do you want to play again?").lower()
