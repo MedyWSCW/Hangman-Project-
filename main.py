@@ -40,8 +40,6 @@ theme, word = choose_word()
 
 Livesremaining = 11
 
-def main():
-    global Livesremaining
    
 # Hangman figure display
 
@@ -153,16 +151,7 @@ def main():
 
 #MAIN CODE 
 intro()
-main()
-
-if Livesremaining == 0:
-
-        print("Game over")
-    
-    # Conclusion
-print("\nThank you for starting our Hangman game! We hope you have a great time playing.")
-print("Remember, the goal is to guess the word before the hangman is fully drawn. Good luck!")
-
-
 #Replay
-play = input("Do you want to play again?").lower()
+while play == "yes":
+     main()
+     play = input("Do you want to play again?").lower()
