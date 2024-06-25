@@ -10,6 +10,24 @@ def choose_word():
     word = random.choice(themes[theme]).upper()
     return theme, word
 
+def intro():
+    answer = input ("Hello, welcome to our Hangman game. Do you know how to play Hangman? (yes/no)").upper().lower()
+    if answer == "yes":
+        print("Great, our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs and cartoons.")
+        input("press enter to start")
+    else:
+        print("That isn't an answer")
+    if answer == "no":
+        print("The aim of this game is to guess a random word before the hangman has been drawn.")
+        print("Our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs and cartoons.")
+        input("Press enter to start")
+    print ("The chosen theme is {}".format (theme))
+    print("The game will now start.")
+
+
+    
+    
+
 theme, word = choose_word()
 
 Livesremaining = 11
@@ -18,149 +36,78 @@ def main():
     global Livesremaining
 # Hangman figure display
 
-def show_hangman(tries):
+def display_hangman(tries):
     stages = [
-            """
-                +------+
-                |
-                |
-                |
-                |
-                |
-            ==============
-            """
-                ,
-            """
-                +------+
-                |      |
-                |      0
-                |
-                |
-                |
-                |
-            ==============
-            """
-                ,
-            """
-                +------+
-                |      |
-                |      0
-                |      |
-                |
-                |
-                |
-            ==============
-            """
-                ,
-            """
-                +------+
-                |      |
-                |      0
-                |     -|
-                |
-                |
-                |
-            ==============
-            """
-                ,
-            """
-                +------+
-                |      |
-                |      0
-                |     -|
-                |
-                |
-                |
-            ==============
-            """
-                ,
-            """
-                +------+
-                |      |
-                |      0
-                |     -|-
-                |
-                |
-                |
-            ==============
-            """
-                ,
-            """
-                +------+
-                |      |
-                |      0
-                |     -|-
-                |     /
-                |
-                |
-            ==============
-            """
-                ,
-            """
-                +------+
-                |      |
-                |      0
-                |     -|-
-                |     / \\
-                |
-                |
-            ==============
-            """
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / \\
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / 
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |      
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|
+                   |      |
+                   |     
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |      |
+                   |      |
+                   |     
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |    
+                   |      
+                   |     
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      
+                   |    
+                   |      
+                   |     
+                   -
+                """
     ]
     # Welcome the player to the quiz
 
-    answer = input ("Hello, welcome to our Hangman game. Do you know how to play Hangman?").upper().lower()
 
-    # Tell the player the themes on the game if they say yes
+# Main Code
 
-    if answer == "yes":
-        print("Great, our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs and cartoons.")
-        input("press enter to start")
-    else:
-        print("That isn't an answer")
-
-    # Tell the player how to play the game if they answer no
-
-    if answer == "no":
-        print("The aim of this game is to guess a random word before the hangman has been drawn.")
-        print("Our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs and cartoons.")
-        input("Press enter to start")
-
-    
-    print ("The chosen theme is {}".format (theme))
-
-
-    print("The game will now start.")
-
-
-answer = input ("Hello, welcome to our Hangman game. Do you know how to play Hangman? (yes/no)").upper().lower()
-
-# Tell the player the themes on the game if they say yes
-
-if answer == "yes":
-    print("Great, our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs and cartoons.")
-    input("press enter to start")
-else:
-    print("That isn't an answer")
-
-# Tell the player how to play the game if they answer no
-
-if answer == "no":
-    print("The aim of this game is to guess a random word before the hangman has been drawn.")
-    print("Our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs and cartoons.")
-    input("Press enter to start")
-
-  
-print ("The chosen theme is {}".format (theme))
-
-
-print("The game will now start.")
-
-
-
-
-
-
+intro()
 
 
 
