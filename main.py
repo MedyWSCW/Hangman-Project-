@@ -1,6 +1,5 @@
 play = "yes"
-# Code for selecting the word from theme
-from distutils.dep_util import newer
+# Code for selecting the word from themes
 import random 
 themes = {
     "Superheros/Villians ": ["Spiderman", "Deadpool", "", "Riddler", "Thanos", "Batman"],
@@ -27,8 +26,6 @@ def intro():
     print("The game will now start.")
 
 
-    
-    
 
 theme, word = choose_word()
 
@@ -117,7 +114,6 @@ def show_hangman(tries):
 
 
 intro()
-
 
 
 if Livesremaining == 0:
