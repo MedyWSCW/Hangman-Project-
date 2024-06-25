@@ -1,4 +1,6 @@
+play = "yes"
 # Code for selecting the word from theme
+from distutils.dep_util import newer
 import random 
 themes = {
     "Superheros/Villians ": ["Spiderman", "Deadpool", "", "Riddler", "Thanos", "Batman"],
@@ -34,9 +36,14 @@ Livesremaining = 11
 
 def main():
     global Livesremaining
+   
 # Hangman figure display
+<<<<<<< HEAD
 
 def display_hangman(tries):
+=======
+def show_hangman(tries):
+>>>>>>> 953e7a86073a6f46cb74be270759cea0f44cb0ea
     stages = [
                 """
                    --------
@@ -102,8 +109,66 @@ def display_hangman(tries):
                    -
                 """
     ]
+<<<<<<< HEAD
     # Welcome the player to the quiz
 
+=======
+
+# MAIN CODE
+
+    while play == "yes":
+    # Welcome the player to the quiz
+        answer = input ("Hello, welcome to our Hangman game. Do you know how to play Hangman?").upper().lower()
+
+    # Tell the player the themes on the game if they say yes
+
+    if answer == "yes":
+        print("Great, our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs and cartoons.")
+        input("press enter to start")
+    else:
+        print("That isn't an answer")
+
+    # Tell the player how to play the game if they answer no
+
+    if answer == "no":
+        print("The aim of this game is to guess a random word before the hangman has been drawn.")
+        print("Our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs and cartoons.")
+        input("Press enter to start")
+
+    
+    print ("The chosen theme is {}".format (theme))
+
+
+    print("The game will now start.")
+
+
+answer = input ("Hello, welcome to our Hangman game. Do you know how to play Hangman? (yes/no)").upper().lower()
+
+# Tell the player the themes on the game if they say yes
+
+if answer == "yes":
+    print("Great, our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs and cartoons.")
+    input("press enter to start")
+else:
+    print("That isn't an answer")
+
+# Tell the player how to play the game if they answer no
+
+if answer == "no":
+    print("The aim of this game is to guess a random word before the hangman has been drawn.")
+    print("Our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs and cartoons.")
+    input("Press enter to start")
+
+  
+print ("The chosen theme is {}".format (theme))
+
+
+print("The game will now start.")
+
+
+
+
+>>>>>>> 953e7a86073a6f46cb74be270759cea0f44cb0ea
 
 # Main Code
 
@@ -120,6 +185,5 @@ print("\nThank you for starting our Hangman game! We hope you have a great time 
 print("Remember, the goal is to guess the word before the hangman is fully drawn. Good luck!")
 
 
-if __name__ == "__main__":
-    main()
-
+#Replay
+play = input("Do you want to play again?").lower()
