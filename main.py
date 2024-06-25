@@ -16,12 +16,103 @@ Livesremaining = 11
 
 def main():
     global Livesremaining
+# Hangman figure display
+
+def show_hangman(tries):
+    stages = [
+            """
+                +------+
+                |
+                |
+                |
+                |
+                |
+            ==============
+            """
+                ,
+            """
+                +------+
+                |      |
+                |      0
+                |
+                |
+                |
+                |
+            ==============
+            """
+                ,
+            """
+                +------+
+                |      |
+                |      0
+                |      |
+                |
+                |
+                |
+            ==============
+            """
+                ,
+            """
+                +------+
+                |      |
+                |      0
+                |     -|
+                |
+                |
+                |
+            ==============
+            """
+                ,
+            """
+                +------+
+                |      |
+                |      0
+                |     -|
+                |
+                |
+                |
+            ==============
+            """
+                ,
+            """
+                +------+
+                |      |
+                |      0
+                |     -|-
+                |
+                |
+                |
+            ==============
+            """
+                ,
+            """
+                +------+
+                |      |
+                |      0
+                |     -|-
+                |     /
+                |
+                |
+            ==============
+            """
+                ,
+            """
+                +------+
+                |      |
+                |      0
+                |     -|-
+                |     / \\
+                |
+                |
+            ==============
+            """
+    ]
 
 
 
 # Welcome the player to the quiz
 
-answer = input ("Hello, welcome to our Hangman game. Do you know how to play Hangman?").upper().lower()
+answer = input ("Hello, welcome to our Hangman game. Do you know how to play Hangman? (yes/no)").upper().lower()
 
 # Tell the player the themes on the game if they say yes
 
@@ -48,8 +139,8 @@ print("The game will now start.")
 
 
 
-if Livesremaining == 0:
 
-    print("Game over")
+
+
 
 
