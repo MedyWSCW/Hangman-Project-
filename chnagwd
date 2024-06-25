@@ -1,0 +1,75 @@
+import random
+
+# Dictionary of themes and words
+themes = {
+    "Superheroes/Villains": ["Spiderman", "Deadpool", "Riddler", "Thanos", "Batman"],
+    "Animals": ["Elephant", "Giraffe", "Lion", "Gorilla", "Tiger"],
+    "Dinosaurs": ["Velociraptor", "Triceratops", "Spinosaurus", "Tyrannosaurus"]
+}
+
+# Function to choose a random word from a random theme
+def choose_word():
+    theme = random.choice(list(themes.keys()))
+    word = random.choice(themes[theme]).upper()
+    return theme, word
+
+# Initialize the game variables
+theme, word = choose_word()
+lives_remaining = 11
+guessed_letters = []
+
+def main():
+    global lives_remaining
+    global guessed_letters
+
+    # Welcome the player to the quiz
+    answer = input("Hello, welcome to our Hangman game. Do you know how to play Hangman? ").strip().lower()
+
+    # Tell the player the themes if they say yes
+    if answer == "yes":
+        print("Great, our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs and cartoons.")
+        input("Press enter to start")
+    # Tell the player how to play the game if they answer no
+    elif answer == "no":
+        print("The aim of this game is to guess a random word before the hangman has been drawn.")
+        print("Our Hangman game will have different themes which are animals, villains, superheroes, dinosaurs and cartoons.")
+        input("Press enter to start")
+    else:
+        print("That isn't a valid answer. Let's start the game anyway.")
+        input("Press enter to start")
+
+    print("The chosen theme is {}".format(theme))
+    print("The game will now start.")
+    print(display_word())
+
+    # Game loop
+    while lives_remaining > 0 and not is_word_guessed():
+        guess = input("Guess a letter: ").strip().upper()
+        if guess in guessed_letters:
+            print("You already guessed that letter.")
+        elif guess in word:
+            guessed_letters.append(guess)
+            print("Good guess!")
+        else:
+            guessed_letters.append(guess)
+            lives_remaining -= 1
+            print("Incorrect guess. You have {} lives remaining.".format(lives_remaining))
+        print(display_word())
+
+    # Check win/loss
+    if is_word_guessed():
+        print("Congratulations, you've guessed the word: {}!".format(word))
+    else:
+        print("Game over! The word was: {}".format(word))
+
+# Function to display the word with guessed letters
+def display_word():
+    display = ''.join([letter if letter in guessed_letters else '_' for letter in word])
+    return display
+
+# Function to check if the word is completely guessed
+def is_word_guessed():
+    return all(letter in guessed_letters for letter in word)
+
+if __name__ == "__main__":
+    main()
