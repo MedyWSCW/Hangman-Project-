@@ -107,7 +107,6 @@ def show_hangman(tries):
             ==============
             """
     ]
-
     # Welcome the player to the quiz
 
     answer = input ("Hello, welcome to our Hangman game. Do you know how to play Hangman?").upper().lower()
