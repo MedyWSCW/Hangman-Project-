@@ -19,9 +19,9 @@ Livesremaining = 11
 def main():
     global Livesremaining
 
+    while play == "yes":
     # Welcome the player to the quiz
-
-    answer = input ("Hello, welcome to our Hangman game. Do you know how to play Hangman?").upper().lower()
+        answer = input ("Hello, welcome to our Hangman game. Do you know how to play Hangman?").upper().lower()
 
     # Tell the player the themes on the game if they say yes
 
