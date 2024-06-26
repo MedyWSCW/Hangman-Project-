@@ -37,7 +37,7 @@ def intro():
 
 theme, word = choose_word()
 
-Livesremaining = 11
+Livesremaining = 9
 
    
 # Hangman figure display
@@ -46,6 +46,26 @@ def show_hangman(tries):
 
     stages = [
                 """
+                   
+                   |      
+                   |      
+                   |    
+                   |      
+                   |     
+                   -
+                """
+                ,
+                """
+                   --------
+                   |      
+                   |      
+                   |    
+                   |      
+                   |     
+                   -
+                """
+                ,
+                """
                    --------
                    |      |
                    |      
@@ -53,7 +73,8 @@ def show_hangman(tries):
                    |      
                    |     
                    -
-                """,
+                """
+                ,
                 """
                    --------
                    |      |
@@ -62,7 +83,18 @@ def show_hangman(tries):
                    |      
                    |     
                    -
-                """,
+                """
+                ,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |      |
+                   |      
+                   |     
+                   -
+                """
+                ,
                 """
                    --------
                    |      |
@@ -71,16 +103,8 @@ def show_hangman(tries):
                    |      |
                    |     
                    -
-                """,
                 """
-                   --------
-                   |      |
-                   |      O
-                   |      |
-                   |      |
-                   |     
-                   -
-                """,
+                ,
                 """
                    --------
                    |      |
@@ -89,7 +113,18 @@ def show_hangman(tries):
                    |      |
                    |     
                    -
-                """,
+                """
+                ,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     
+                   -
+                """
+                ,
                 """
                    --------
                    |      |
@@ -98,7 +133,8 @@ def show_hangman(tries):
                    |      |
                    |     / 
                    -
-                """,
+                """
+                ,
                 """
                    --------
                    |      |
@@ -108,6 +144,7 @@ def show_hangman(tries):
                    |     / \\
                    -
                 """
+                ,
               
     ]
     
@@ -121,7 +158,8 @@ def show_hangman(tries):
 def main():
     theme, word = choose_word()
     guessed_letters = set()
-    attempts_remaining = 6
+    attempts_remaining = 8
+    tries = 9
 
     print(f"The chosen theme is {theme}.")
     print("The game will now start.")
@@ -129,7 +167,7 @@ def main():
     while attempts_remaining > 0:
         print(f"\nWord: {display_current_progress(word, guessed_letters)}")
         print(f"Attempts remaining: {attempts_remaining}")
-        print(show_hangman(6 - attempts_remaining))
+        print(show_hangman(10 - tries))
         guess = input("Guess a letter: ").upper()
         
         if guess in guessed_letters:
@@ -140,27 +178,22 @@ def main():
         else:
             guessed_letters.add(guess)
             attempts_remaining -= 1
+            tries -=1
             print(f"Unlucky, '{guess}' is not in the word.")
         
         if word_guessed(word, guessed_letters):
             print(f"Congratulations! You've guessed the word '{word}' correctly.")
             break
+        if attempts_remaining == 0:
+            print(show_hangman(10 - tries))
+            print("Game over! The word was {}. Better luck next time".format (word))
+
     
-    print(f"Game over! The word was '{word}'. Better luck next time.")
+    
 
 
 #MAIN CODE 
 intro()
-
-main()
-
-if Livesremaining == 0:
-
-        print("Game over")
-    
-    # Conclusion
-print("\nThank you for starting our Hangman game! We hope you have a great time playing.")
-print("Remember, the goal is to guess the word before the hangman is fully drawn. Good luck!")  
 
 
 
@@ -168,3 +201,8 @@ print("Remember, the goal is to guess the word before the hangman is fully drawn
 while play == "yes":
      main()
      play = input("Do you want to play again?").lower()
+# Conclusion
+print("\nThank you for starting our Hangman game! We hope you have a great time playing.")
+
+
+     
