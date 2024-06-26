@@ -2,9 +2,9 @@ play = "yes"
 # Code for selecting the word from themes
 import random 
 themes = {
-    "Superheros/Villians ": ["Spiderman", "Deadpool", "", "Riddler", "Thanos", "Batman"],
-    "Animals": ["Elephant", "Giraffe", "", "Lion", "Gorilla", "Tiger"],
-    "Dinosaurs": ["Velociraptor", "Triceratops", "Spinosaurus", "", "Tyrannosaurus"]
+    "Superheros/Villians ": ["Spiderman", "Deadpool", "Riddler", "Thanos", "Batman"],
+    "Animals": ["Elephant", "Giraffe", "Lion", "Gorilla", "Tiger"],
+    "Dinosaurs": ["Velociraptor", "Triceratops", "Spinosaurus","Tyrannosaurus"]
 }
 def choose_word():
     theme = random.choice(list(themes.keys()))
